@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <!--
+     app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+               app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+-->
+
+    <!-- Report Results -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="454dp"
+        android:layout_height="137dp"
+        android:layout_marginStart="203dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="74dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="5dp"
+            android:text="Search Vacation"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:text="Start Date: " />
+
+            <TextView
+                android:id="@+id/startDateInput"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:hint="mm/dd/yy"
+                android:inputType="date" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:text="End Date: " />
+
+            <TextView
+                android:id="@+id/endDateInput"
+                android:layout_width="86dp"
+                android:layout_height="29dp"
+                android:hint="mm/dd/yy"
+                android:inputType="date" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/generateReportButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginLeft="130dp"
+            android:backgroundTint="#475662"
+            android:text="Generate Report" />
+
+        <TextView
+            android:id="@+id/reportTitle"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:text="Report:"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="735dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/reportRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+
+        <LinearLayout
+            android:id="@+id/reportHeaders"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:background="#DDDDDD"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:weightSum="5">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Vacation Title"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dates"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="98dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="Excursions"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Timestamp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reportRecyclerView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reportRecyclerView"
+        android:layout_width="675dp"
+        android:layout_height="116dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
